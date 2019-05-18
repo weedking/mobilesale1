@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet, Text, View, ScrollView} from 'react-native';
 import {Accordion, Button, List} from 'antd-mobile-rn';
+import AddCustomer from "./AddCustomer";
 
 class Customer extends React.Component<any, any>{
     constructor() {
@@ -17,7 +18,8 @@ class Customer extends React.Component<any, any>{
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Button>新增用户</Button>
+
+                {/*<AddCustomer/>*/}
                 <Accordion
                     onChange={this.onChange}
                     activeSections={this.state.activeSections}
@@ -33,7 +35,7 @@ class Customer extends React.Component<any, any>{
                         联系电话：13760271597
                         公司地址：深圳是南山区桃园路147号南景苑21G
                     </Accordion.Panel>
-                    <Accordion.Panel header="广州市天河区南塘路333号采光广场大厦B座123">
+                    <Accordion.Panel header="广州市天源集团">
                         {/*<List>*/}
                             {/*<List.Item>联系人：刘德华</List.Item>*/}
                             {/*<List.Item>联系电话：13760271597</List.Item>*/}
@@ -48,10 +50,10 @@ class Customer extends React.Component<any, any>{
                         联系人：刘德华
                         联系电话：13760271597
                         公司地址：深圳是南山区桃园路147号南景苑21G
-
-
                     </Accordion.Panel>
                 </Accordion>
+
+                <Button>新增用户</Button>
             </View>
         );
     }
