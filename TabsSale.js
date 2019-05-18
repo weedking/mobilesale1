@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { Tabs } from 'antd-mobile-rn';
+import { Tabs,WhiteSpace, } from 'antd-mobile-rn';
+import Customer from "./Customer";
 
 
 const renderContent = (tab, index) => {
@@ -26,9 +27,10 @@ const renderContent = (tab, index) => {
 export  class TabsSale extends React.Component {
     render() {
         const tabs = [
-            { title: 'First Tab' },
-            { title: 'Second Tab' },
-            { title: 'Third Tab' },
+            { title: '客户信息' },
+            { title: '销售简报' },
+            { title: '数据看板' },
+            { title: 'CRM通知' },
         ];
         const tabs2 = [
             { title: '1st Tab' },
@@ -49,22 +51,29 @@ export  class TabsSale extends React.Component {
         };
         return (
             <View style={{ flex: 1 }}>
+                <WhiteSpace />
                 <Tabs tabs={tabs}>
                     <View style={style}>
-                        <Text>Content of First Tab</Text>
+                        {/*<Text>客户信息1sdagdfgdfgsdfgdfgadfgafgasgasgasgasgafgafgafsgasgafgafsgafsgf</Text>*/}
+                        <Customer/>
                     </View>
                     <View style={style}>
-                        <Text>Content of Second Tab</Text>
+                        <Text>销售简报</Text>
                     </View>
                     <View style={style}>
-                        <Text>Content of Third Tab</Text>
+                        <Text>数据看板</Text>
+                    </View>
+                    <View style={style}>
+                        <Text>CRM通知</Text>
                     </View>
                 </Tabs>
-                <View style={{ flex: 3 }}>
-                    <Tabs tabs={tabs2} initialPage={1} tabBarPosition="top">
-                        {renderContent}
-                    </Tabs>
-                </View>
+
+                {/*<View style={{ flex: 3 }}>*/}
+                    {/*<Tabs tabs={tabs2} initialPage={1} tabBarPosition="top">*/}
+                        {/*{renderContent}*/}
+                    {/*</Tabs>*/}
+                {/*</View>*/}
+
             </View>
         );
     }

@@ -1,29 +1,58 @@
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet, Text, View, ScrollView} from 'react-native';
-import { Button, Icon, SearchBar, TabBar, WhiteSpace, Grid } from 'antd-mobile-rn';
+import {Accordion, Button, List} from 'antd-mobile-rn';
 
 class Customer extends React.Component<any, any>{
-    constructor(props: any) {
-        super(props);
+    constructor() {
+        super(...arguments);
         this.state = {
-            selectedTab: 'redTab',
-            bottonshow: false
+            activeSections: [2, 0],
         };
-        // this.handleClick = this.handleClick.bind(this)
-        // this.showcustomer=this.showcustomer.bind(this);
-        // this.kk=this.kk.bind(this);
+        this.onChange = activeSections => {
+            this.setState({ activeSections });
+        };
     }
-
-
+//     style={{ flex: 1 }}
+// style={{ marginTop: 80, marginBottom: 10 }}
     render() {
         return (
-            <ScrollView>
+            <View style={{ flex: 1 }}>
+                <Button>新增用户</Button>
+                <Accordion
+                    onChange={this.onChange}
+                    activeSections={this.state.activeSections}
+                >
+                    <Accordion.Panel header="深圳市汇源肾宝有限公司">
+                        {/*<List>*/}
+                            {/*<List.Item>联系人：刘德华</List.Item>*/}
+                            {/*<List.Item>联系电话：13760271597</List.Item>*/}
+                           {/*<List.Item>公司地址：深圳是南山区桃园路147号南景苑21G</List.Item>*/}
+                        {/*</List>*/}
 
-                <View style={[{ margin: 10 }]}>
-                    <Text>新加的</Text>
-                </View>
+                        联系人：刘德华
+                        联系电话：13760271597
+                        公司地址：深圳是南山区桃园路147号南景苑21G
+                    </Accordion.Panel>
+                    <Accordion.Panel header="广州市天河区南塘路333号采光广场大厦B座123">
+                        {/*<List>*/}
+                            {/*<List.Item>联系人：刘德华</List.Item>*/}
+                            {/*<List.Item>联系电话：13760271597</List.Item>*/}
+                            {/*<List.Item>公司地址：深圳是南山区桃园路147号南景苑21G</List.Item>*/}
+                        {/*</List>*/}
+                        {/*this is panel content2 or other*/}
+                        联系人：刘德华
+                        联系电话：13760271597
+                        公司地址：深圳是南山区桃园路147号南景苑21G
+                    </Accordion.Panel>
+                    <Accordion.Panel header="北京市中日友好医院">
+                        联系人：刘德华
+                        联系电话：13760271597
+                        公司地址：深圳是南山区桃园路147号南景苑21G
 
-            </ScrollView>
+
+                    </Accordion.Panel>
+                </Accordion>
+            </View>
         );
     }
 

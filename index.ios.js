@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet, Text, View, ScrollView} from 'react-native';
-import { Button, Icon, SearchBar, TabBar, WhiteSpace } from 'antd-mobile-rn';
+import { Button, Icon, SearchBar, TabBar, WhiteSpace, WingBlank, } from 'antd-mobile-rn';
 
 import SalePage from './SalePage';
 import TabsSale from './TabsSale';
@@ -49,45 +49,49 @@ export default class mobilesale1 extends Component<any, any> {
 
   render() {
     return (
-        <TabBar
-            unselectedTintColor="#949494"
-            tintColor="#33A3F4"
-            barTintColor="#f5f5f5"
-        >
-          <TabBar.Item
-              title="工作"
-              // icon={<Icon type="home" />}
-              //RN 官方的 TabBar 不支持 Icon（字体），必须是 RN 的 Image 类型, 只能传 imagesource
-              icon={require('../mobilesale1/img/work1.png')}
-              badge={2}
-              selected={this.state.selectedTab === 'blueTab'}
-              onPress={() => this.onChangeTab('blueTab')}
-          >
-            {this.renderContent('工作')}
-          </TabBar.Item>
 
-          <TabBar.Item
-              icon={require('../mobilesale1/img/crm16.png')}
-              title="CRM"
-              selected={this.state.selectedTab === 'greenTab'}
-              onPress={() => this.onChangeTab('greenTab')}
-          >
-            {/*{this.renderContent('CRM')}*/}
-            {/*<SalePage />*/}
-            <TabsSale />
+            <TabBar
+                unselectedTintColor="#949494"
+                tintColor="#33A3F4"
+                barTintColor="#f5f5f5"
+            >
+                <TabBar.Item
+                    title="工作"
+                    // icon={<Icon type="home" />}
+                    //RN 官方的 TabBar 不支持 Icon（字体），必须是 RN 的 Image 类型, 只能传 imagesource
+                    icon={require('../mobilesale1/img/work1.png')}
+                    badge={2}
+                    selected={this.state.selectedTab === 'blueTab'}
+                    onPress={() => this.onChangeTab('blueTab')}
+                >
+                    {this.renderContent('工作')}
+                </TabBar.Item>
+
+                <TabBar.Item
+                    icon={require('../mobilesale1/img/crm16.png')}
+                    title="CRM"
+                    selected={this.state.selectedTab === 'greenTab'}
+                    onPress={() => this.onChangeTab('greenTab')}
+                >
+                    {/*{this.renderContent('CRM')}*/}
+                    {/*<SalePage />*/}
+                    <TabsSale />
 
 
-          </TabBar.Item>
+                </TabBar.Item>
 
-          <TabBar.Item
-              icon={require('../mobilesale1/img/me.png')}
-              title="我"
-              selected={this.state.selectedTab === 'yellowTab'}
-              onPress={() => this.onChangeTab('yellowTab')}
-          >
-            {this.renderContent('我的')}
-          </TabBar.Item>
-        </TabBar>
+                <TabBar.Item
+                    icon={require('../mobilesale1/img/me.png')}
+                    title="我"
+                    selected={this.state.selectedTab === 'yellowTab'}
+                    onPress={() => this.onChangeTab('yellowTab')}
+                >
+                    {this.renderContent('我的')}
+                </TabBar.Item>
+            </TabBar>
+
+
+
     );
   }
 }
