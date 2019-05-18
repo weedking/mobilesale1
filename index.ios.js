@@ -9,6 +9,8 @@ import {AppRegistry, StyleSheet, Text, View, ScrollView} from 'react-native';
 import { Button, Icon, SearchBar, TabBar, WhiteSpace } from 'antd-mobile-rn';
 
 import SalePage from './SalePage';
+import TabsSale from './TabsSale';
+
 
 const PlaceHolder = props => (
     <View
@@ -71,7 +73,9 @@ export default class mobilesale1 extends Component<any, any> {
               onPress={() => this.onChangeTab('greenTab')}
           >
             {/*{this.renderContent('CRM')}*/}
-            <SalePage />
+            {/*<SalePage />*/}
+            <TabsSale />
+
 
           </TabBar.Item>
 
